@@ -2,3 +2,14 @@
 body {
     margin: 0;
 }
+
+p-inputtext,
+p-inputnumber {
+
+    &.ng-invalid.ng-touched {
+        input {
+            border-color: red;
+        }
+    }
+
+}

@@ -13,13 +13,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { CreatePageComponent } from './pages/create-page/create-page.component';
+import { ChbComponent } from './components/chb/chb.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
-    CreatePageComponent
+    CreatePageComponent,
+    ChbComponent
   ],
   imports: [
     BrowserModule,

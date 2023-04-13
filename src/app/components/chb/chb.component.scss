@@ -1,0 +1,8 @@
+.wrap {
+    cursor: pointer;
+    font-size: 36px;
+
+    &.disabled {
+        opacity: 0.4;
+    }
+}

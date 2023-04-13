@@ -1,6 +1,12 @@
 <h2> Create </h2>
 
+
 <form [formGroup]="form">
+    <!-- [isChecked]="true" (onToggle)="toggleChb($event)"  -->
+    <div class="form-item">
+        CHB
+        <app-chb formControlName="chb"></app-chb>
+    </div>
     <div class="form-item">
         <label> Name </label>
         <input type="text" pInputText formControlName="name" />
@@ -28,20 +34,25 @@
     </div>
 
     <div formArrayName="products" class="form-array">
-        <h4> Products </h4>
+        <h4>
+            Products {{qwerty$ |async}}
+            <button pButton type="button" icon="pi pi-plus" class="p-button-text" (click)="append()"> </button>
+        </h4>
 
-        <div formGroupName="0" class="form-group">
+        <div *ngFor="let product of productFormArray; let index = index" [formGroupName]="index" class="form-group">
+            <button pButton type="button" icon="pi pi-trash" class="p-button-text" (click)="remove(index)"> </button>
+
             <div class="form-item">
                 <label> Name </label>
                 <input type="text" pInputText formControlName="name" />
             </div>
 
             <div class="form-item">
-                <label> PriceS </label>
+                <label> Price </label>
                 <p-inputNumber inputId="integeronly" formControlName="price"></p-inputNumber>
             </div>
         </div>
     </div>
 
-    <button pButton type="button" (click)="submit()"> Save </button>
+    <button pButton type="button" [disabled]="form.invalid" (click)="submit()"> Save </button>
 </form>
