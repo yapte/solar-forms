@@ -1,0 +1,47 @@
+<h2> Create </h2>
+
+<form [formGroup]="form">
+    <div class="form-item">
+        <label> Name </label>
+        <input type="text" pInputText formControlName="name" />
+    </div>
+
+    <label>
+        <p-checkbox [binary]="true" formControlName="isInputAgeDisabled"></p-checkbox>
+        <span> Запретить ввод возраста </span>
+    </label>
+
+    <div class="form-item">
+        <label> Age </label>
+        <p-inputNumber inputId="integeronly" formControlName="age"></p-inputNumber>
+    </div>
+
+    <div formGroupName="params" class="form-group">
+        <div class="form-item">
+            <label> Size </label>
+            <p-inputNumber inputId="integeronly" formControlName="size"></p-inputNumber>
+        </div>
+        <div class="form-item">
+            <label> Width </label>
+            <p-inputNumber inputId="integeronly" formControlName="width"></p-inputNumber>
+        </div>
+    </div>
+
+    <div formArrayName="products" class="form-array">
+        <h4> Products </h4>
+
+        <div formGroupName="0" class="form-group">
+            <div class="form-item">
+                <label> Name </label>
+                <input type="text" pInputText formControlName="name" />
+            </div>
+
+            <div class="form-item">
+                <label> PriceS </label>
+                <p-inputNumber inputId="integeronly" formControlName="price"></p-inputNumber>
+            </div>
+        </div>
+    </div>
+
+    <button pButton type="button" (click)="submit()"> Save </button>
+</form>

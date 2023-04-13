@@ -1,0 +1,31 @@
+:host {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    background-color: #ccc;
+    z-index: 1;
+
+    .nav {
+        display: flex;
+        gap: 12px;
+    }
+}
+
+main {
+    min-height: 120vh;
+    border: solid 1px #ccc;
+    padding: 12px;
+}
+
+footer {
+    padding: 12px;
+    border: solid 1px #ccc;
+}
