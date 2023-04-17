@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 import { ButtonModule } from 'primeng/button';
@@ -14,6 +15,8 @@ import { AppComponent } from './app.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { CreatePageComponent } from './pages/create-page/create-page.component';
 import { ChbComponent } from './components/chb/chb.component';
+import { InputFileComponent } from './components/input-file/input-file.component';
+import { BannerComponent } from './components/banner/banner.component';
 
 
 @NgModule({
@@ -21,13 +24,16 @@ import { ChbComponent } from './components/chb/chb.component';
     AppComponent,
     HomePageComponent,
     CreatePageComponent,
-    ChbComponent
+    ChbComponent,
+    InputFileComponent,
+    BannerComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    HttpClientModule,
 
     ButtonModule,
     CheckboxModule,

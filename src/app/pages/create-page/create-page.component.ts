@@ -1,11 +1,13 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormArray, FormGroup, FormControl, AbstractControl, Validators } from '@angular/forms';
 import { of } from 'rxjs';
+import { pageAnimation } from 'src/app/animations/page.animation';
 
 @Component({
   selector: 'app-create-page',
   templateUrl: './create-page.component.html',
   styleUrls: ['./create-page.component.scss'],
+  animations: [pageAnimation],
   // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CreatePageComponent implements OnInit {
@@ -23,6 +25,7 @@ export class CreatePageComponent implements OnInit {
       // this._genepateProductForm(),
       // this._genepateProductForm(), 
     ]),
+    fileGuid: new FormControl<string>(''),
   });
 
   get productFormArray(): AbstractControl[] {
@@ -81,4 +84,12 @@ export class CreatePageComponent implements OnInit {
     console.log('CHB', value);
     (this.form.get('chb') as FormControl).setValue(value);
   }
+
+  // I
+  onUpload(guid: string) {
+    this.form.get('fileGuid')!.setValue(guid);
+  }
+
+  // II
+
 }

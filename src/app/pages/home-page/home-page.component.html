@@ -1,1 +1,13 @@
-<p>home-page works!</p>
+<h1> Формы </h1>
+
+<app-banner text="Lorem ipsum dolor sit amet."></app-banner>
+
+<div *ngIf="list$ |async as list" class="list" @collapseAnimation>
+    <div *ngFor="let item of list" class="item">
+        {{item |json}}
+    </div>
+</div>
+
+<app-input-file (onUpload)="onUpload($event)"></app-input-file>
+
+<div *ngIf="inProgress" class="in-progress"> IN PROGRESS </div>
