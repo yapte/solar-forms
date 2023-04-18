@@ -1,0 +1,50 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+
+    <h3> FORM </h3>
+
+    <div class="form-item">
+        <label> C1 (PRIME) </label>
+        <input pInputText type="text" formControlName="c1" placeholder="placeholder">
+        <small *ngIf="form.controls['c1'].errors?.['required'] && form.controls['c1'].touched" @collapseAnimation>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio quos facere laboriosam dignissimos.
+            Cumque, ducimus. Corrupti!
+        </small>
+    </div>
+
+    <p-checkbox [binary]="true"></p-checkbox>
+
+    <div class="form-item">
+        <label> C1 </label>
+        <input type="text" formControlName="c1" placeholder="placeholder">
+        <small *ngIf="form.controls['c1'].errors?.['required'] && form.controls['c1'].touched" @collapseAnimation>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio quos facere laboriosam dignissimos.
+            Cumque, ducimus. Corrupti!
+        </small>
+    </div>
+
+    <div class="form-item">
+        <label> C2 </label>
+        <input type="text" formControlName="c2" placeholder="placeholder">
+        <small *ngIf="form.controls['c2'].errors?.['required'] && form.controls['c2'].touched" @collapseAnimation>
+            Required field
+        </small>
+    </div>
+
+    <div class="form-item">
+        <label> C3 </label>
+        <input type="number" formControlName="c3" placeholder="placeholder">
+        <small *ngIf="form.controls['c3'].errors?.['required'] && form.controls['c3'].touched" @collapseAnimation>
+            Required
+        </small>
+        <small
+            *ngIf="(form.controls['c3'].errors?.['min'] || form.controls['c3'].errors?.['max']) && form.controls['c3'].touched"
+            @collapseAnimation>
+            MIN = 1, MAX = 100
+        </small>
+    </div>
+
+    <div class="btns">
+        <button pButton type="button" label="Validate" (click)="validate()"></button>
+        <button pButton type="submit" label="Submit" [disabled]="form.invalid"></button>
+    </div>
+</form>

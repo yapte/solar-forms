@@ -17,6 +17,7 @@ import { CreatePageComponent } from './pages/create-page/create-page.component';
 import { ChbComponent } from './components/chb/chb.component';
 import { InputFileComponent } from './components/input-file/input-file.component';
 import { BannerComponent } from './components/banner/banner.component';
+import { ClearFormPageComponent } from './pages/clear-form-page/clear-form-page.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { BannerComponent } from './components/banner/banner.component';
     CreatePageComponent,
     ChbComponent,
     InputFileComponent,
-    BannerComponent
+    BannerComponent,
+    ClearFormPageComponent
   ],
   imports: [
     BrowserModule,

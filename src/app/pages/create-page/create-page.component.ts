@@ -20,6 +20,7 @@ export class CreatePageComponent implements OnInit {
       size: new FormControl<number>(12),
       width: new FormControl<number>(122),
     }),
+    a: new FormControl<number | null>(null),
     products: new FormArray([
       // this._genepateProductForm(),
       // this._genepateProductForm(),

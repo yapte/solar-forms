@@ -1,0 +1,38 @@
+form {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    .form-item {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        input {
+            padding: 16px;
+
+            &.ng-invalid.ng-touched {
+                border-color: red;
+            }
+        }
+    }
+
+    small {
+        color: red;
+    }
+
+    .btns {
+        display: flex;
+        gap: 24px;
+    }
+}
+
+p-checkbox {
+    ::ng-deep {
+        .p-checkbox .p-checkbox-box.p-highlight {
+            border-color: green;
+            background: green;
+        }
+    }
+}
